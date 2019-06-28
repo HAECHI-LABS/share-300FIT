@@ -24,4 +24,3 @@ contract ERC20Burnable is ERC20 {
         _burnFrom(from, value);
     }
 }
-

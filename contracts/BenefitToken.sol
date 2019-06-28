@@ -11,7 +11,6 @@ contract BNFToken is ERC20Pausable, ERC20Burnable, AirdroperRole {
   string public symbol           = "FIT";
   uint   public decimals         = 18;
 
-  uint   public startTime ;
   uint   public airdropCounts ; 
   uint   public airdropAmounts ; 
 
@@ -19,7 +18,6 @@ contract BNFToken is ERC20Pausable, ERC20Burnable, AirdroperRole {
   
   constructor() public
   { 
-    startTime = now;
     _mint(0xC4F551FcCf5B7E5d7ECd31BBa135B989369d5fE3 ,4999980000 * 10 ** decimals );	//49.9998%
     _mint(0xf2425e64B2e25683467a720E2EcE1E9872A509d1 ,850020000	* 10 ** decimals );  //8.5002%
     _mint(0x7F795ee1274d462E3Dc3B2EAa35B765A774B990c ,825000000	* 10 ** decimals );  //8.2500%
@@ -35,7 +33,7 @@ contract BNFToken is ERC20Pausable, ERC20Burnable, AirdroperRole {
   mapping (uint => mapping (address => bool) ) public airdrops; // [0|1|2|n ..] => address => [false|true]
   function airdropTokens(uint _airdropNumber, address[] memory _receiver, uint[] memory _value) public onlyAirdroper
   {
-      require(now >= startTime);
+      require(_receiver.length == _value.length);
       uint airdropped;
       for(uint256 i = 0; i< _receiver.length; i++)
       {
@@ -49,7 +47,6 @@ contract BNFToken is ERC20Pausable, ERC20Burnable, AirdroperRole {
   }
 
 }
-
 
 
 

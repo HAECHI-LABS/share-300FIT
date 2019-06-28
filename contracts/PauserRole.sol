@@ -46,4 +46,3 @@ contract PauserRole is Ownable {
         emit PauserRemoved(account);
     }
 }
-

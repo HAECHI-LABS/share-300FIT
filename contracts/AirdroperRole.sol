@@ -48,4 +48,3 @@ contract AirdroperRole is Ownable {
         emit AirdroperRemoved(account);
     }
 }
-

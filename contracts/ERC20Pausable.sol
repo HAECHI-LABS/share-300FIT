@@ -28,4 +28,3 @@ contract ERC20Pausable is ERC20, Pausable {
         return super.decreaseAllowance(spender, subtractedValue);
     }
 }
-

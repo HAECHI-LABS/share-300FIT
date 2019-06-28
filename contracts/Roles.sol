@@ -38,4 +38,3 @@ library Roles {
         return role.bearer[account];
     }
 }
-

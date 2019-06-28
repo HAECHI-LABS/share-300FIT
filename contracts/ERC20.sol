@@ -185,4 +185,3 @@ contract ERC20 is IERC20 {
         emit Approval(account, msg.sender, _allowed[account][msg.sender]);
     }
 }
-

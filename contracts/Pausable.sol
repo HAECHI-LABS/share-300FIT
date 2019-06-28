@@ -55,4 +55,3 @@ contract Pausable is PauserRole {
         emit Unpaused(msg.sender);
     }
 }
-
